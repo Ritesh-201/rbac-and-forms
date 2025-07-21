@@ -1,0 +1,155 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl);
+}
+
+.form {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+.stepContent {
+  min-height: 400px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.stepTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+}
+
+.stepDescription {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.formGrid.single {
+  grid-template-columns: 1fr;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.stepInfo {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.reviewSection {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.reviewTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.125rem;
+}
+
+.reviewItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reviewItem:last-child {
+  border-bottom: none;
+}
+
+.reviewLabel {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.reviewValue {
+  color: var(--text-secondary);
+}
+
+.successMessage {
+  text-align: center;
+  padding: var(--spacing-2xl);
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-success);
+  margin: 0 auto var(--spacing-lg);
+}
+
+.successTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.successDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.progressLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  transform: translateY(-50%);
+  transition: width var(--transition-slow);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+  
+  .form {
+    padding: var(--spacing-lg);
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .navigation {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .buttonGroup {
+    justify-content: space-between;
+  }
+  
+  .stepInfo {
+    text-align: center;
+  }
+}

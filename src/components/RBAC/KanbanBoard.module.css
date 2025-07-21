@@ -1,0 +1,330 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  min-height: 500px;
+}
+
+.column {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.columnTitle {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.columnIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.columnIcon.todo {
+  color: var(--color-gray-500);
+}
+
+.columnIcon.inprogress {
+  color: var(--color-warning);
+}
+
+.columnIcon.done {
+  color: var(--color-success);
+}
+
+.taskCount {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.taskList {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.task {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  cursor: grab;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.task.dragging {
+  transform: rotate(5deg);
+  box-shadow: var(--shadow-lg);
+  opacity: 0.8;
+}
+
+.task.readOnly {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.task.readOnly:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border-color);
+}
+
+.task.ownTask {
+  border-left: 4px solid var(--color-primary);
+}
+
+.task.ownTask:hover {
+  border-left-color: var(--color-primary-dark);
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.taskTitle {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  flex: 1;
+  margin-right: var(--spacing-sm);
+}
+
+.priorityBadge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.priorityBadge.high {
+  background-color: var(--color-error);
+  color: white;
+}
+
+.priorityBadge.medium {
+  background-color: var(--color-warning);
+  color: white;
+}
+
+.priorityBadge.low {
+  background-color: var(--color-gray-400);
+  color: white;
+}
+
+.taskDescription {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-md);
+}
+
+.editButton {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-secondary);
+  opacity: 0;
+}
+
+.task:hover .editButton {
+  opacity: 1;
+}
+
+.editButton:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.task.readOnly .editButton {
+  display: none;
+}
+
+.taskFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.assignee {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.assigneeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.dueDate {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.dueDateIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.addTaskButton {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.addTaskButton:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.addTaskButton:disabled {
+  background: var(--color-gray-400);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  color: var(--text-tertiary);
+  text-align: center;
+  min-height: 150px;
+}
+
+.emptyStateIcon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.5;
+}
+
+.emptyStateText {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.permissionOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.task.readOnly:hover .permissionOverlay {
+  opacity: 1;
+}
+
+.permissionIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-error);
+  background-color: white;
+  border-radius: 50%;
+  padding: var(--spacing-xs);
+}
+
+@media (max-width: 1024px) {
+  .board {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .column {
+    min-height: auto;
+  }
+  
+  .taskList {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .board {
+    gap: var(--spacing-md);
+  }
+  
+  .column {
+    padding: var(--spacing-md);
+  }
+  
+  .taskHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+  
+  .taskFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+}
