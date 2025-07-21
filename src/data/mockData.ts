@@ -9,9 +9,9 @@ export const mockUsers: User[] = [
   },
   {
     id: '2',
-    name: 'John Employee',
+    name: 'Ritesh Employee',
     role: 'employee',
-    email: 'john@company.com'
+    email: 'Ritesh@company.com'
   },
   {
     id: '3',
@@ -22,11 +22,11 @@ export const mockUsers: User[] = [
 ];
 
 export const mockEmployees = [
-  { id: '2', name: 'John Employee' },
-  { id: '4', name: 'Sarah Developer' },
-  { id: '5', name: 'Mike DevOps' },
-  { id: '6', name: 'Lisa Designer' },
-  { id: '7', name: 'Tom Analyst' }
+  { id: '2', name: 'Ritesh Employee' },
+  { id: '4', name: 'Shubham Developer' },
+  { id: '5', name: 'Yuvraj DevOps' },
+  { id: '6', name: 'Akshat Designer' },
+  { id: '7', name: 'Pratik Analyst' }
 ];
 export const mockTasks: { [key: string]: Task } = {
   'task-1': {
@@ -34,7 +34,7 @@ export const mockTasks: { [key: string]: Task } = {
     title: 'Design User Interface',
     description: 'Create wireframes and mockups for the new dashboard',
     assignedTo: '2',
-    assignedToName: 'John Employee',
+    assignedToName: 'Ritesh Employee',
     status: 'todo',
     priority: 'high',
     createdAt: '2024-01-15',
@@ -45,7 +45,7 @@ export const mockTasks: { [key: string]: Task } = {
     title: 'Implement Authentication',
     description: 'Set up JWT authentication system',
     assignedTo: '2',
-    assignedToName: 'John Employee',
+    assignedToName: 'Ritesh Employee',
     status: 'inprogress',
     priority: 'high',
     createdAt: '2024-01-10',
@@ -56,7 +56,7 @@ export const mockTasks: { [key: string]: Task } = {
     title: 'Write Documentation',
     description: 'Document the API endpoints and usage',
     assignedTo: '4',
-    assignedToName: 'Sarah Developer',
+    assignedToName: 'Shubham Developer',
     status: 'todo',
     priority: 'medium',
     createdAt: '2024-01-12',
@@ -65,9 +65,9 @@ export const mockTasks: { [key: string]: Task } = {
   'task-4': {
     id: 'task-4',
     title: 'Setup CI/CD Pipeline',
-    description: 'Configure automated testing and deployment',
+    description: 'Configure auPratikated testing and deployment',
     assignedTo: '5',
-    assignedToName: 'Mike DevOps',
+    assignedToName: 'Yuvraj DevOps',
     status: 'done',
     priority: 'medium',
     createdAt: '2024-01-05',
@@ -78,7 +78,7 @@ export const mockTasks: { [key: string]: Task } = {
     title: 'Database Migration',
     description: 'Migrate legacy data to new schema',
     assignedTo: '4',
-    assignedToName: 'Sarah Developer',
+    assignedToName: 'Shubham Developer',
     status: 'inprogress',
     priority: 'high',
     createdAt: '2024-01-08',
@@ -89,7 +89,7 @@ export const mockTasks: { [key: string]: Task } = {
     title: 'Performance Optimization',
     description: 'Optimize application load times',
     assignedTo: '5',
-    assignedToName: 'Mike DevOps',
+    assignedToName: 'Yuvraj DevOps',
     status: 'todo',
     priority: 'low',
     createdAt: '2024-01-14',
